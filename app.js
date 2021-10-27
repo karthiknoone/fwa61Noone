@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var mydataRouter = require('./routes/mydata');
+var mydata = require('./routes/mydata');
 var compute = require('./routes/compute');
 
 var app = express();
@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/mydata', mydata);
 app.use('/compute', compute);
 
 
